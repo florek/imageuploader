@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <imageuploader_adminhtml_images_edit>
+        <reference name="menu">
+            <action method="setActive"><menupath>imageuploader</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="imageuploader/adminhtml_images_edit" name="imageuploader.adminhtml.images.edit" />
+            <block type="imageuploader/adminhtml_images_products" name="imageuploader.adminhtml.images.products" />
+        </reference>
+    </imageuploader_adminhtml_images_edit>
+    <imageuploader_adminhtml_images_new>
+        <reference name="menu">
+            <action method="setActive"><menupath>imageuploader</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="imageuploader/adminhtml_images_edit" name="imageuploader.adminhtml.images.edit" />
+        </reference>
+    </imageuploader_adminhtml_images_new>
+    <imageuploader_adminhtml_images_index>
+        <reference name="menu">
+            <action method="setActive"><menupath>imageuploader</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="imageuploader/adminhtml_images" name="imageuploader.adminhtml.images" />
+        </reference>
+    </imageuploader_adminhtml_images_index>
+</layout>
+

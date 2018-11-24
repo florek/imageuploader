@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <tabs>
+        <imageuploader module="imageuploader" translate="label">
+            <label>Image Uploader</label>
+            <sort_order>1000</sort_order>
+        </imageuploader>
+    </tabs>
+    <sections>
+        <imageuploader_settings module="imageuploader" translate="label">
+            <label>Image Uploader Settings</label>
+            <sort_order>1000</sort_order>
+            <tab>imageuploader</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <basic_settings module="imageuploader" translate="label">
+                    <label>Basic Settings</label>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                    </fields>
+                </basic_settings>
+            </groups>
+        </imageuploader_settings>
+    </sections>
+</config>

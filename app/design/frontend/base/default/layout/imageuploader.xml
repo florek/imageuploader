@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="content">
+            <block type="imageuploader/catalog_product_view_images" name="imageuploader.catalog.product.view.images" template="imageuploader/catalog/product/view/images.phtml" />
+            <block type="imageuploader/catalog_product_view_uploader" name="imageuploader.catalog.product.view.uploader" template="imageuploader/catalog/product/view/uploader.phtml" />
+        </reference>
+    </catalog_product_view>
+</layout>

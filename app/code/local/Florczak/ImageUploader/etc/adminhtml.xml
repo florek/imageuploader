@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adminhtml>
+    <menu>
+        <imageuploader module="imageuploader" translate="title">
+            <title>Image Uploader</title>
+            <sort_order>80</sort_order>
+            <depends>
+                <config>imageuploader_settings/basic_settings/active</config>
+            </depends>
+            <children>
+                <product_images module="imageuploader" translate="title">
+                    <title>Product Images</title>
+                    <sort_order>1</sort_order>
+                    <action>imageuploader/adminhtml_images</action>
+                </product_images>
+            </children>
+        </imageuploader>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <imageuploader module="imageuploader" translate="title">
+                        <title>Image Uploader</title>
+                        <sort_order>80</sort_order>
+                        <children>
+                            <product_images module="imageuploader" translate="title">
+                                <title>Product Images</title>
+                                <sort_order>1</sort_order>
+                            </product_images>
+                        </children>
+                    </imageuploader>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <imageuploader_settings>
+                                        <title>Image Uploader Settings</title>
+                                    </imageuploader_settings>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>

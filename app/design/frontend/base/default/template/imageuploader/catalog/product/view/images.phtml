@@ -1,0 +1,4 @@
+<?php /* @var $this Florczak_ImageUploader_Block_Catalog_Product_View_Images */ ?>
+<?php foreach ($this->getImages() as $image): ?>
+    <img style="display: inline;" width="150px" src="<?php echo $this->getImageUrl($image->getFileName()); ?>" />
+<?php endforeach; ?>
