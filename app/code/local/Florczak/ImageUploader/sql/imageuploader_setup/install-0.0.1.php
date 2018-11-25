@@ -35,7 +35,9 @@ $imageTable = $installer->getConnection()->newTable('florczak_imageuploader_imag
         ],
         'Status'
     );
-$imageProductImage = $installer->getConnection()->newTable('florczak_imageuploader_product_image')
+$installer->getConnection()->createTable($imageTable);
+
+$imageProductImageTable = $installer->getConnection()->newTable('florczak_imageuploader_product_image')
     ->addColumn(
         'id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
@@ -70,7 +72,7 @@ $imageProductImage = $installer->getConnection()->newTable('florczak_imageupload
     )
     ->addForeignKey(
         $this->getFkName(
-            $this->getTable('imageuploader_product_image'),
+            $this->getTable('florczak_imageuploader_product_image'),
             'product_id',
             $this->getTable('catalog_product_entity'),
             'entity_id'
@@ -83,17 +85,16 @@ $imageProductImage = $installer->getConnection()->newTable('florczak_imageupload
     )
     ->addForeignKey(
         $this->getFkName(
-            $this->getTable('imageuploader_product_image'),
+            $this->getTable('florczak_imageuploader_product_image'),
             'image_id',
-            $this->getTable('imageuploader_image'),
+            $this->getTable('florczak_imageuploader_image'),
             'id'
         ),
         'image_id',
-        $this->getTable('imageuploader_image'),
+        $this->getTable('florczak_imageuploader_image'),
         'id',
         Varien_Db_Ddl_Table::ACTION_CASCADE,
         Varien_Db_Ddl_Table::ACTION_CASCADE
     );
-$installer->getConnection()->createTable($imageTable);
-$installer->getConnection()->createTable($imageProductImage);
+$installer->getConnection()->createTable($imageProductImageTable);
 $installer->endSetup();
