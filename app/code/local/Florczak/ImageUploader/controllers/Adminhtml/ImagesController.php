@@ -106,9 +106,9 @@ class Florczak_ImageUploader_Adminhtml_ImagesController extends Florczak_ImageUp
             if ($this->getRequest()->getParam('back')) {
                 $this->_redirect(
                     '*/*/edit',
-                    array(
+                    [
                         'id' => $id
-                    )
+                    ]
                 );
                 return;
             }

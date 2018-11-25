@@ -35,6 +35,9 @@ class Florczak_ImageUploader_Model_Observer
         /* @var $controller Mage_Adminhtml_Catalog_ProductController */
         $productParams = $controller->getRequest()->getParam('product');
         if (isset($productParams['additional_images'])) {
+            if (!is_array($productParams['additional_images'])) {
+                $productParams['additional_images'] = [];
+            }
             $productId = $controller->getRequest()->getParam('id');
             $updateService = Mage::getModel('imageuploader/services_product_image_update');
             /* @var $updateService Florczak_ImageUploader_Model_Services_Product_Image_Update */

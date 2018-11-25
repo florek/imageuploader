@@ -37,7 +37,7 @@ class Florczak_ImageUploader_Block_Adminhtml_Images_Products_Grid extends Mage_A
             ->addAttributeToSelect('name');
         /* @var $collection Florczak_ImageUploader_Model_Resource_Product_Image_Collection */
         $collection->getSelect()->joinLeft(
-            array('ipi' => Mage::getSingleton('core/resource')->getTableName('florczak_imageuploader_product_image')),
+            ['ipi' => Mage::getSingleton('core/resource')->getTableName('florczak_imageuploader_product_image')],
             'e.entity_id=ipi.product_id AND ipi.image_id=' . Mage::registry('image_data')->getId()
         );
         $collection->getSelect()->order('ipi.product_id DESC');
@@ -83,19 +83,19 @@ class Florczak_ImageUploader_Block_Adminhtml_Images_Products_Grid extends Mage_A
     {
         $this->setMassactionIdField('id');
         $this->getMassactionBlock()->setFormFieldName('image_product_massaction');
-        $this->getMassactionBlock()->addItem('delete', array(
+        $this->getMassactionBlock()->addItem('delete', [
             'label' => $this->__('Assign'),
             'url' => $this->getUrl('imageuploader/adminhtml_images_product_mass/massAssign',
                 ['image_id' => $this->getRequest()->getParam('id')]
             ),
             'confirm' => $this->__('Are you sure?')
-        ));
-        $this->getMassactionBlock()->addItem('accept', array(
+        ]);
+        $this->getMassactionBlock()->addItem('accept', [
             'label' => $this->__('Unassign'),
             'url' => $this->getUrl('imageuploader/adminhtml_images_product_mass/massUnassign',
                 ['image_id' => $this->getRequest()->getParam('id')]
             ),
             'confirm' => $this->__('Are you sure?')
-        ));
+        ]);
     }
 }

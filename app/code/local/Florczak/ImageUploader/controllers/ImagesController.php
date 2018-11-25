@@ -6,6 +6,9 @@ class Florczak_ImageUploader_ImagesController extends Mage_Core_Controller_Front
     public function uploadAction()
     {
         try {
+            if (!$this->_validateFormKey()) {
+                throw new Exception($this->__('Invalid form key.'));
+            }
             $productId = $this->getRequest()->getParam('product_id');
             $imageSaveService = Mage::getModel('imageuploader/services_image_save');
             /* @var $imageSaveService Florczak_ImageUploader_Model_Services_Image_Save */
@@ -16,7 +19,7 @@ class Florczak_ImageUploader_ImagesController extends Mage_Core_Controller_Front
             $productImageSaveService->save($productId, $id);
             Mage::getSingleton('core/session')->addSuccess($this->__('Your image is awaiting for acceptance.'));
         } catch (Exception $e) {
-            Mage::getSingleton('core/session')->addError($this->__('An error occured during saving.'));
+            Mage::getSingleton('core/session')->addError($this->__($e->getMessage()));
         }
         $this->_redirectReferer();
     }

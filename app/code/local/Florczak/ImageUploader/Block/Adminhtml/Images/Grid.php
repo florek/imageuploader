@@ -106,20 +106,20 @@ class Florczak_ImageUploader_Block_Adminhtml_Images_Grid extends Mage_Adminhtml_
     {
         $this->setMassactionIdField('id');
         $this->getMassactionBlock()->setFormFieldName('image_massaction');
-        $this->getMassactionBlock()->addItem('delete', array(
+        $this->getMassactionBlock()->addItem('delete', [
             'label' => $this->__('Delete'),
-            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massDelete', array()),
+            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massDelete', []),
             'confirm' => $this->__('Are you sure?')
-        ));
-        $this->getMassactionBlock()->addItem('accept', array(
+        ]);
+        $this->getMassactionBlock()->addItem('accept', [
             'label' => $this->__('Accept'),
-            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massAccept', array()),
+            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massAccept', []),
             'confirm' => $this->__('Are you sure?')
-        ));
-        $this->getMassactionBlock()->addItem('reject', array(
+        ]);
+        $this->getMassactionBlock()->addItem('reject', [
             'label' => $this->__('Reject'),
-            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massReject', array()),
+            'url' => $this->getUrl('imageuploader/adminhtml_images_mass/massReject', []),
             'confirm' => $this->__('Are you sure?')
-        ));
+        ]);
     }
 }

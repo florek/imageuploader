@@ -28,6 +28,9 @@ class Florczak_ImageUploader_Model_Services_Image_Save
             if ($fileName) {
                 $image->setFileName($fileName);
             }
+            if (!$image->getFileName()) {
+                throw new Exception(Mage::helper('imageuploader')->__('Image is required field.'));
+            }
             $image->save();
             $id = $image->getId();
         } catch (Exception $e) {
