@@ -1,9 +1,16 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Services_Image_Status
+ *
+ * This class is used as a service to avoid duplicated code
+ */
 class Florczak_ImageUploader_Model_Services_Image_Status
 {
 
     /**
+     * This method returns statuses of an image as an array with options and labels
+     *
      * @return array
      */
     public function getStatuses()

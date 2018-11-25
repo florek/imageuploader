@@ -7,7 +7,7 @@ $setup = new Mage_Eav_Model_Entity_Setup('core_setup');
 
 $attribute = [
     'group' => 'General',
-    'source' => 'imageuploader/services_image_catalog_product_attribute_source',
+    'source' => 'imageuploader/catalog_product_attribute_additional_image_source',
     'sort_order' => 7,
     'label' => 'Additional Images',
     'input' => 'multiselect',

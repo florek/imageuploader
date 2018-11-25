@@ -1,9 +1,16 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Services_Product_Image_Update
+ *
+ * This class is used as a service to avoid duplicated cod
+ */
 class Florczak_ImageUploader_Model_Services_Product_Image_Update
 {
 
     /**
+     * This method is used for proper update from the edit page
+     *
      * @param int $productId
      * @param array $additionalImageIds
      */
@@ -23,6 +30,8 @@ class Florczak_ImageUploader_Model_Services_Product_Image_Update
     }
 
     /**
+     * This method creates new entities of the product image model
+     *
      * @param int $productId
      * @param array $additionalImageIds
      */
@@ -38,6 +47,8 @@ class Florczak_ImageUploader_Model_Services_Product_Image_Update
     }
 
     /**
+     * This method removes old entities of the product image model
+     *
      * @param int $productId
      */
     protected function _removeOldEntities($productId)

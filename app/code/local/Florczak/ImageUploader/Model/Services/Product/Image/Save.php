@@ -1,8 +1,21 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Services_Product_Image_Save
+ *
+ *
+ * This class is used as a service to avoid duplicated code
+ */
 class Florczak_ImageUploader_Model_Services_Product_Image_Save
 {
 
+    /**
+     * This method is responsibility for a proper saved of a relation between a product and an image
+     *
+     * @param int $productId
+     * @param int $imageId
+     * @throws Exception
+     */
     public function save($productId, $imageId)
     {
         try {

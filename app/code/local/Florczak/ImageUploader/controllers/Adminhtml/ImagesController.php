@@ -103,6 +103,15 @@ class Florczak_ImageUploader_Adminhtml_ImagesController extends Florczak_ImageUp
             /* @var $imageSaveService Florczak_ImageUploader_Model_Services_Image_Save */
             $imageSaveService->save($id, $postData);
             Mage::getSingleton('adminhtml/session')->addSuccess('Successfully saved!');
+            if ($this->getRequest()->getParam('back')) {
+                $this->_redirect(
+                    '*/*/edit',
+                    array(
+                        'id' => $id
+                    )
+                );
+                return;
+            }
             $this->_redirect('*/*');
         } catch (Exception $e) {
             Mage::logException($e);

@@ -1,10 +1,12 @@
-<h2><?php echo $this->__('Add your own image!') ?></h2>
-<form action="<?php echo $this->getUrl('imageuploader/images/upload'); ?>" method="post" enctype="multipart/form-data">
-    <input type="file" name="image" />
-    <input type="hidden" name="product_id" value="<?php echo Mage::registry('current_product')->getId(); ?>" />
-    <button class="button" type="submit">
-        <span>
-            <span><?php echo $this->__('Upload File!'); ?></span>
-        </span>
-    </button>
-</form>
+<div class="product-options">
+    <h2><?php echo $this->__('Add your own image!') ?></h2>
+    <form action="<?php echo $this->getUrl('imageuploader/images/upload'); ?>" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" />
+        <input type="hidden" name="product_id" value="<?php echo Mage::registry('current_product')->getId(); ?>" />
+        <button class="button" type="submit">
+            <span>
+                <span><?php echo $this->__('Upload File!'); ?></span>
+            </span>
+        </button>
+    </form>
+</div>

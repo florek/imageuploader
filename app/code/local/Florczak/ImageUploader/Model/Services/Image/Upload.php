@@ -1,9 +1,16 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Services_Image_Upload
+ *
+ * This class is used as a service to avoid duplicated code
+ */
 class Florczak_ImageUploader_Model_Services_Image_Upload
 {
 
     /**
+     * This method returns a file name of an uploaded file based on files from a fiven form
+     *
      * @param array $filesPost
      * @return null|string
      */
@@ -18,6 +25,8 @@ class Florczak_ImageUploader_Model_Services_Image_Upload
     }
 
     /**
+     * This method creates and returns the varien file uploader
+     *
      * @param array $filesPost
      * @return null|Varien_File_Uploader
      */

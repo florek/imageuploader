@@ -9,6 +9,16 @@ class Florczak_ImageUploader_Block_Adminhtml_Images_Edit extends Mage_Adminhtml_
         $this->_objectId = 'id';
         $this->_controller = 'adminhtml_images';
         $this->_blockGroup = 'imageuploader';
+        $this->_addButton('save_and_continue', array(
+            'label' => $this->__('Save And Continue Edit'),
+            'onclick' => 'saveAndContinueEdit()',
+            'class' => 'save'
+        ), -100);
+        $this->_formScripts[] = "
+             function saveAndContinueEdit(){
+                editForm.submit($('edit_form').action + 'back/edit/');
+             }
+        ";
     }
 
     /**

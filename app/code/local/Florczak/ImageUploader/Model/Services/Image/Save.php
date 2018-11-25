@@ -1,9 +1,16 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Services_Image_Save
+ *
+ * This class is used as a service to avoid duplicated code
+ */
 class Florczak_ImageUploader_Model_Services_Image_Save
 {
 
     /**
+     * This method is used for proper saved of an image
+     *
      * @param int $id
      * @param array $postData
      * @return int|null

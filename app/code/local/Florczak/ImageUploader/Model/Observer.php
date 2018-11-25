@@ -1,23 +1,31 @@
 <?php
 
+/**
+ * Class Florczak_ImageUploader_Model_Observer
+ *
+ * This method is responsibility for modification of the load of product and modification of
+ * postdispatch method of the product save action
+ */
 class Florczak_ImageUploader_Model_Observer
 {
 
-    protected $_product;
-
     /**
+     * This method is used for set additional images field in the product model
+     *
      * @param Varien_Event_Observer $observer
      * @return $this
      */
     public function additionalImageLoad(Varien_Event_Observer $observer)
     {
-        $this->_product = $observer->getEvent()->getProduct();
-        /* @var $product Mage_Catalog_Model_Product */
-        $this->_product->setAdditionalImages($this->_getAdditionalImageIds());
+        $product = $observer->getEvent()->getProduct();
+        /* @var $product Mage_Catalog_Model_Product */;
+        $product->setAdditionalImages($this->_getAdditionalImageIds($product));
         return $this;
     }
 
     /**
+     * This method is used for save additional images field in the product model
+     *
      * @param Varien_Event_Observer $observer
      * @return $this
      */
@@ -36,11 +44,12 @@ class Florczak_ImageUploader_Model_Observer
     }
 
     /**
+     * @param Mage_Catalog_Model_Product $product
      * @return array
      */
-    protected function _getAdditionalImageIds()
+    protected function _getAdditionalImageIds(Mage_Catalog_Model_Product $product)
     {
-        $productImages = $this->_getProductImages();
+        $productImages = $this->_getProductImages($product->getId());
         $ids = [];
         foreach ($productImages as $productImage) {
             $ids[] = $productImage->getImageId();
@@ -49,13 +58,14 @@ class Florczak_ImageUploader_Model_Observer
     }
 
     /**
-     * @return Florczak_ImageUploader_Model_Resource_Image_Collection
+     * @param $productId
+     * @return Florczak_ImageUploader_Model_Resource_Product_Image_Collection
      */
-    protected function _getProductImages()
+    protected function _getProductImages($productId)
     {
         return Mage::getModel('imageuploader/product_image')
             ->getCollection()
-            ->addFieldToFilter('product_id', $this->_product->getId());
+            ->addFieldToFilter('product_id', $productId);
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 
 class Florczak_ImageUploader_Block_Catalog_Product_View_Images
-    extends Mage_Core_Block_Template
+    extends Florczak_ImageUploader_Block_Catalog_Product_View_Abstract
 {
 
     /**
