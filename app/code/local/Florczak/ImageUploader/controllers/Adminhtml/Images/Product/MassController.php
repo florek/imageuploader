@@ -43,7 +43,6 @@ class Florczak_ImageUploader_Adminhtml_Images_Product_MassController extends Flo
             Mage::getSingleton('adminhtml/session')->addSuccess($this->__('Successfully unassigned.'));
         } catch (Exception $e) {
             Mage::logException($e);
-            die(var_dump($e->getMessage()));
             Mage::getSingleton('adminhtml/session')->addError($this->__('An error occured during removal.'));
         }
         $this->_redirect('imageuploader/adminhtml_images/edit', ['id' => $imageId]);

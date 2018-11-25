@@ -23,6 +23,7 @@ class Florczak_ImageUploader_Model_Catalog_Product_Attribute_Additional_Image_So
         /* @var $images Florczak_ImageUploader_Model_Resource_Image_Collection */
         $options = [];
         foreach ($images as $image) {
+            /* @var $image Florczak_ImageUploader_Model_Image */
             $options[] = [
                 'label' => $image->getFileName(),
                 'value' => $image->getId()
